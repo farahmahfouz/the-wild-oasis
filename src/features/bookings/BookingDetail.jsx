@@ -8,6 +8,7 @@ import ButtonGroup from "../../ui/ButtonGroup";
 import Button from "../../ui/Button";
 import ButtonText from "../../ui/ButtonText";
 import Spinner from './../../ui/Spinner';
+import Empty from './../../ui/Empty';
 import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 
@@ -40,7 +41,8 @@ function BookingDetail() {
   };
 
 
-  if (isLoading) return <Spinner />
+  if (isLoading) return <Spinner />;
+  if(!booking) return <Empty resource='booking'/>
 
   const { status, id: bookingId } = booking;
 
